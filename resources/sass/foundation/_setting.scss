@@ -1,0 +1,75 @@
+@charset "utf-8";
+//0 = My, 1 = HTML5 , 2 = Eric, 3 = YUI, 4 = Normalize, ohter Universal Selector
+$resetCSS: 4;
+
+// ===================================================================
+// 基本値
+// ===================================================================
+// 画像パス
+$img_path: "../img";
+
+// Body
+$bg: #f9fbfe;
+
+// Typography
+$font-size-base: .9rem;
+$line-height-base: 1.6;
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66d9b;
+$red: #cf524d;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+// $emeraldo: #4bcfc8;
+// $emeraldo: #81c3c7;
+$emeraldo: #B79B5B; 
+$base: #313435;
+
+.blue {
+  color: $blue;
+}
+.indigo {
+  color: $indigo;
+}
+.purple {
+  color: $purple;
+}
+.pink {
+  color: $pink;
+}
+.red {
+  color: $red;
+}
+.orange {
+  color: $orange;
+}
+.yellow {
+  color: $yellow;
+}
+.green {
+  color: $green;
+}
+.teal {
+  color: $teal;
+}
+.cyan {
+  color: $cyan;
+}
+.emeraldo {
+  color: $emeraldo;
+}
+
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: "Nunito", sans-serif;
+$font-size-base: .9rem;
+$line-height-base: 1.6;
+$fa-font-path: "../webfonts";

@@ -1,0 +1,282 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Girassol&display=swap');
+
+// mixin メディアクエリ
+// @include pc {};
+// @include sp {};
+
+.l-header {
+  @include pc {
+    height: 65px;
+    color: #e7e7e7;
+    font-family: "PT Sans", sans-serif !important;
+    font-size: 100%;
+    background: #313435;
+    display: flex;
+    align-items: center;
+    color: #3b3d4b;
+    box-shadow: 0 1px 3px rgba(160,166,179,.3);  
+  };
+
+  @include sp {
+    background: #ffffff;
+  };
+
+  a {
+    text-decoration: none;
+    font-family: 'Girassol', cursive;
+    color: $emeraldo;
+    @include pc {  
+    };
+    @include sp {
+    };
+  }
+
+  p {
+    color: #fff;
+  }
+
+  &__title {
+    font-size: 2rem;
+    color: #000 !important;
+    @include pc {
+      height: 65px;
+      line-height: 65px;
+      margin-left: 50px;
+    }
+    @include sp {
+      display: block;
+      // text-align: center;
+      margin-left: 20px;
+      padding: 20px 0;
+      font-size: 2.5rem;
+      border-bottom: solid 1px #e0e7ef;
+
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: auto;
+    font-size: .9rem;
+    text-align: center;
+    cursor: auto;
+    @include pc {
+      margin-right: 50px;
+      height: 200px;
+    };
+    @include sp {
+      margin-right: 20px;
+      height: 150px;
+      li {
+        line-height: 82px;
+      }
+    };
+
+    & ul {
+      width: auto;
+      white-space: nowrap;
+      @include pc {
+        line-height: 65px;
+      };
+      @include sp {
+        line-height: 50px;
+      };
+    }
+    & li {
+      display: inline-block;
+    }
+    & a {
+      display: inline-block;
+      height: auto;
+      line-height: normal;
+      background: transparent;
+    }
+  }
+  &__spnav {
+    @include pc {
+      display: none;
+    };
+    @include sp {
+      position: fixed;
+      bottom: 0;
+      opacity: 1 !important;
+      background: #ffffff;
+      z-index: 1000;
+      a{
+        color:rgb(155, 143, 143);
+      }  
+      label.icons{
+          font-size:25px;
+          position: fixed;
+          z-index: 3000;
+          color:rgb(155, 143, 143);
+          left:50%;
+          bottom: 0;
+          opacity: 1;
+      }
+      label.home{
+          transform: translate(-135px,-15px);
+      }
+      label.search{
+          transform: translate(-54px,-12px);
+      }
+      label.bell{
+          transform: translate(30px,-15px);
+      }
+      label.pen{
+          transform: translate(120px,-15px);
+      }
+      div#box{
+          z-index: 1000;
+          width:100vw;
+          height:60px;
+          background-color: white;
+          box-shadow:0px 1px 2px black;
+          position: fixed;
+          left:50%;
+          bottom: 0;
+          transform:translate(-50%);
+          border:1px solid white;
+          opacity: 1 !important;
+      }
+    };
+
+  }
+
+  &-dropdown {
+    a,
+    a:visited {
+      text-decoration: none;
+      outline: none;
+      
+    }
+  
+    & > ul > li > a {
+      color: inherit;
+      text-decoration: none !important;
+    }
+  
+    & li ul {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      max-height: 0;
+      font: bold;
+      text-align: center;
+      list-style: none;
+              transition: max-height .4s linear;
+  
+      -webkit-transition: max-height .4s linear;
+         -moz-transition: max-height .4s linear;;
+      @include pc {
+        right: 20px;
+        width: 250px;
+      };
+      @include sp {
+        right: 20px;
+        z-index: 2;
+      };
+    }
+  
+    & li ul li {
+      background-color: #313435;
+      &:hover {
+        background-color: #575757;
+      }
+      @include pc {
+        padding: 15px 0;
+      };
+      @include sp {
+        padding: 1rem 2rem;
+      };
+    }
+  
+    & li ul li a {
+      display: block;
+      color: #fff !important;
+      text-decoration: none !important;
+    }
+  
+    & li ul li:first-child {
+      position: relative;
+      margin-top: 10px;
+      border-radius: 3px 3px 0 0;
+      // ドロップダウンのマーク
+      &:before {
+        /* the pointer tip */
+        content: "";
+        position: fixed;
+        top: -10px;
+        left: 50%;
+        width: 1px;
+        height: 1px;
+        margin-left: -5px;
+        border: 5px solid transparent;
+        border-bottom-color: #292a34;
+      }
+    }
+  
+    & li ul li:last-child {
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px;
+      
+    }  
+    & li:hover ul {
+      max-height: 300px; /* Increase when adding more dropdown items */
+    }
+    &__child {
+      &-user {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        cursor: pointer;
+        min-width: 120px;
+        @include pc {
+          margin-right: 35px;
+          line-height: 65px;  
+        };
+        @include sp {
+          line-height: 82px;
+          p {
+            color: #000;
+          }
+        };
+        &__img {
+          display: block;
+        }
+      }
+    }
+  }
+  // ログイン
+  & a.l-header__signin {
+    border: none;
+    color: #fff;
+    @include pc {
+      padding-right: 2rem;
+    };
+    @include sp {
+      color: #000;
+      padding-right: 10px;
+    };
+  }
+
+  // 新規ユーザー登録
+  & a.l-header__signup {
+    padding: .4em 1em;
+    color: #fff;
+    background: $emeraldo;
+    border: 1px solid $emeraldo;
+            border-radius: 3px;
+
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+         -o-border-radius: 3px;
+    @include pc {};
+    @include sp {};     
+    }
+}
